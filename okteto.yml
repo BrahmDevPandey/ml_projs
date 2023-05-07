@@ -1,0 +1,22 @@
+version: "1.0"
+
+services:
+  classifier:
+    image: classifier:latest
+    working_dir: /app
+    build: "./"
+    restart: always
+    volumes:
+      - ./data:/app/intent-classification
+    command: bash -c "python intent-classification/app.py"
+    ports:
+      - "5500:5500"
+    public: true
+    networks:
+      - all
+
+networks:
+  all:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"
