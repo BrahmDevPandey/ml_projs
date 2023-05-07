@@ -4,6 +4,6 @@ WORKDIR /app
 
 ADD . /app/
 
-RUN pip install --no-cache-dir --upgrade pip
-
 RUN pip install -r intent-classification/requirements.txt
+
+RUN python -m spacy download en-core-web-sm
