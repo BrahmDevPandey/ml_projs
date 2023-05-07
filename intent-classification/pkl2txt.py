@@ -14,7 +14,7 @@ intents = {1: 'admission_process',
             9: 'miscellaneous'}
 
 nlp = spacy.load("en_core_web_sm")
-with open("/data/question_classifier.pkl", "rb") as file:
+with open("/app/intent-classification/question-classifier.pkl", "rb") as file:
   classifier = pickle.load(file)
 
 # a simple function to determine the intent of a question
