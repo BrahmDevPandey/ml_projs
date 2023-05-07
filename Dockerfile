@@ -6,4 +6,4 @@ ADD . /app/
 
 RUN pip install -r intent-classification/requirements.txt
 
-RUN python -m spacy download en-core-web-sm
+RUN python -m spacy download en_core_web_sm
